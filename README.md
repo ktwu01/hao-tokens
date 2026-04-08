@@ -10,144 +10,144 @@
 
 ---
 
-## Official student / education entry points (verify on the provider site)
+## 官方学生 / 教育入口（请在厂商站点再次确认）
 
-| Product | Official links | Notes (high level; **confirm latest terms yourself**) |
-|---------|----------------|--------------------------------------------------------|
-| **GitHub Copilot (Student)** | [GitHub Education – Students](https://education.github.com/students), [Copilot for students](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student), [Education benefits](https://github.com/settings/education/benefits) | Verified students/teachers may get **Copilot**; pairs with **GitHub Models** and IDE flows. |
-| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | Partner bundle; includes AI‑adjacent perks (**Notion Education + AI**, **Camber** LLM quotas, etc.—read each offer). |
-| **Google Gemini (students)** | [Gemini for Students](https://gemini.google/students/) | Promos **vary by region/time**; some regions ran a **12‑month** student deal; pages may emphasize **trials**—see live FAQ. |
-| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education), [Education Pro](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | Pricing **evolves**; edu verification (e.g. **SheerID**) is common; trust **official** copy only. |
-| **OpenAI – ChatGPT / Edu / Codex** | [Students landing](https://chat.openai.com/college-students/), [ChatGPT Education](https://openai.com/chatgpt/education), [Codex for Students](https://developers.openai.com/community/students) | Promos often **time‑boxed / region‑specific**; **Edu** is usually **institution‑purchased**; **Codex** ~**$100** credits for verified **US/CA** students (per official page). |
-| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | Cloud credits; **hosting** and **Azure OpenAI** experiments where allowed. |
+| 产品 | 官方核对入口 | 备注（概括；**使用前请自行确认最新条款**） |
+|------|----------------|------------------------------------------|
+| **GitHub Copilot（学生）** | [GitHub Education – Students](https://education.github.com/students)、[学生 Copilot 说明](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student)、[教育权益设置](https://github.com/settings/education/benefits) | 核验通过的学生/教师可获得 **Copilot**；可与 **GitHub Models**、IDE 工作流搭配。 |
+| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | 合作方权益合集；含 AI 相关项（如 **Notion Education + AI**、**Camber** LLM 条数等——请逐条阅读）。 |
+| **Google Gemini（学生页）** | [Gemini for Students](https://gemini.google/students/) | 活动**随地区/时间变化**；多地曾推 **12 个月**学生方案，现页面可能侧重**试用**——请看站内 FAQ。 |
+| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education)、[Education Pro 帮助](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | 价格在演变；学历核验（如 **SheerID**）常见；以官方为准。 |
+| **OpenAI – ChatGPT / Edu / Codex** | [学生落地页示例](https://chat.openai.com/college-students/)、[ChatGPT Education](https://openai.com/chatgpt/education)、[Codex for Students](https://developers.openai.com/community/students) | 促销多**限时、分地区**；**Edu** 多为学校采购；**Codex** 美加学生约 **$100** 额度（以官方为准）。 |
+| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | 云额度；在允许范围内可用于**托管**与 **Azure OpenAI** 实验。 |
 
-**Otter.ai:** Transcription‑focused. **Basic** is free (limits); **Pro** has a [student & teacher discount](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan) (often `.edu`). See [otter.ai/pricing](https://otter.ai/pricing).
-
----
-
-**Handbook + link hub** — student/educator AI benefits & legit free API refs; not key sharing · [简体中文](README.zh-CN.md)
+**Otter.ai：** 转写向。**Basic** 免费（有额度）；**Pro** [师生优惠](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)（常见 `.edu`）。价目 [otter.ai/pricing](https://otter.ai/pricing)。
 
 ---
 
-## Why this exists
-
-Students and self‑learners often need **Chat / Research / Code** AI without burning money. “薅 token” here means **stacking legitimate allowances**: education verification, free developer tiers, and community‑maintained directories of **provider‑documented** limits—not bypassing billing or sharing paid keys.
+**精选索引：**学生/教育 AI 权益与合规免费 API · 手册非破解 · [English](README.en.md)
 
 ---
 
-## Method: how we built the index
+## 为什么需要它
 
-We ran **multiple rounds** of discovery (2026‑04) across GitHub and the open web, including queries like:
-
-- `site:github.com student free LLM`, `free LLM API`, `awesome free inference`, `no-cost-ai`, `perplexity student`, `Gemini student`, `OpenAI student`, `GitHub Education Copilot`
-
-From that we **sampled 56+ repositories** (see table below): **awesome lists**, **forks of major lists**, **student‑offer write‑ups**, **client/UI projects** that pair well with free `base_url` APIs, plus **vetted adjacent SDK/tooling**. Star counts drift; always open the repo for the latest README.
-
-We could not reliably **enumerate 50 distinct GitHub repositories with verification in one pass** from web search alone (results are capped and repetitive). The subsection below lists **substantive sources** the survey surfaced, **GitHub searches** to find dozens more, tiered repo tables, official vendor pages, and **red flags** for staying legitimate.
+学生和自学者常常希望在**聊天 / 研究 / 写代码**场景里用 AI，又尽量不花钱。这里的「薅 token」指**合法叠加额度**：教育身份验证、开发者免费层，以及社区维护的、**仅引用厂商文档**的额度说明——而不是绕开计费或传播付费 Key。
 
 ---
 
-## Landscape report: methodology & tiered sources
+## 方法：索引如何建立
 
-### How to get 50+ repos yourself (fast)
+我们在 GitHub 与开放网络上进行了**多轮**检索（2026-04），查询示例包括：
 
-Use GitHub’s search (logged in yields better caps):
+- `site:github.com student free LLM`、`free LLM API`、`awesome free inference`、`no-cost-ai`、Perplexity / Gemini / OpenAI 学生相关、`GitHub Education Copilot`
 
-1. **Free / API lists**  
+由此**抽样整理了 56+ 个仓库**（见下表）：**awesome 列表**、大列表的 **fork**、**学生优惠**说明、与免费 `base_url` API 配套的**客户端/UI**，以及**已粗筛**的相邻 SDK/工具链。Star 数会变化，请以仓库最新 README 为准。
+
+仅靠网页搜索**无法在一次检索中可靠穷尽 50 个互不重复且已核验的 GitHub 仓库**（结果有上限且重复多）。下文列出调研中**较重要的来源**、可自行扩展的 **GitHub 搜索式**、分层仓库表、官方入口，以及**合规红线**。
+
+---
+
+## 全景：方法论与分层资源
+
+### 如何自己快速找到 50+ 个相关仓库
+
+登录 GitHub 后搜索上限通常更友好：
+
+1. **免费 / API 列表**  
    `free llm api stars:>100`  
    `awesome free inference`  
    `permanent free tier LLM API`  
    `openrouter groq gemini free tier`
 
-2. **Student / education**  
+2. **学生 / 教育**  
    `student perks developer`  
    `awesome student resources`  
    `github education pack`  
    `student discount AI`
 
-3. **Gateways / pooling (infra)**  
+3. **网关 / 池化（基础设施）**  
    `litellm proxy`  
    `one-api LLM`  
    `new-api gateway`  
    `AI gateway OpenAI compatible`
 
-Bookmark the **Awesome** meta-list once your list is mature: [sindresorhus/awesome](https://github.com/sindresorhus/awesome) (submission process is strict).
+列表成熟后可投稿元列表 **[sindresorhus/awesome](https://github.com/sindresorhus/awesome)**（审核较严）。
 
-### Important sources (tiered)
+### 重要来源（分层）
 
-#### A. “Canonical” free-LLM / API curated lists (high signal)
+#### A. 「基准级」免费 LLM / API 精选列表（信噪比较高）
 
-These are references serious list-makers cite or merge from:
+认真做列表的人常会引用或合并这些：
 
-| Repo | Role |
+| 仓库 | 作用 |
 |------|------|
-| [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | Very starred; broad provider list + trials; “don’t abuse” culture |
-| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | Focus: **permanent** free tiers; table-style, CC0 |
-| [bradAGI/awesome-free-inference](https://github.com/bradAGI/awesome-free-inference) | Tiers (no card / credits / self-hosted); LiteLLM angle |
-| [nejib1/Free-LLM](https://github.com/nejib1/Free-LLM) | Directory style; companion site; many providers |
+| [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | Star 很多；厂商覆盖面广 + 试用额度；社区强调「勿滥用」 |
+| [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | 强调**长期**免费层；表格化，CC0 |
+| [bradAGI/awesome-free-inference](https://github.com/bradAGI/awesome-free-inference) | 分层（免绑卡 / 赠额 / 自建）；含 LiteLLM 思路 |
+| [nejib1/Free-LLM](https://github.com/nejib1/Free-LLM) | 目录式；有配套站点；厂商多 |
 
-**Forks / derivatives (same lineage, lower maintenance):**  
-[KI-IAN/free-llm-api-resources-forked](https://github.com/KI-IAN/free-llm-api-resources-forked), [nherx/free-llm-api-resources](https://github.com/nherx/free-llm-api-resources)
+**同系 fork / 衍生（维护度可能较低）：**  
+[KI-IAN/free-llm-api-resources-forked](https://github.com/KI-IAN/free-llm-api-resources-forked)、[nherx/free-llm-api-resources](https://github.com/nherx/free-llm-api-resources)
 
-#### B. Student & “whole stack” perks (not only LLM API)
+#### B. 学生与「全栈」福利（不止 LLM API）
 
-| Repo / page | Role |
+| 仓库 / 页面 | 作用 |
 |-------------|------|
-| [jhaxce/student-perks](https://github.com/jhaxce/student-perks) | Curated student benefits DB (includes AI rows) |
-| [Shashwat-19/awesome-student-resources](https://github.com/Shashwat-19/awesome-student-resources) | Classic awesome-list for students |
-| [education/students](https://github.com/education/students) | GitHub Education entry |
-| [GitHub Student Developer Pack](https://education.github.com/pack) | **Copilot**, Azure credits, DO, many partners |
-| [Codex for Students](https://developers.openai.com/community/students) | **$100 ChatGPT credits (US/CA, verified)** for Codex — official |
+| [jhaxce/student-perks](https://github.com/jhaxce/student-perks) | 学生福利整理（含云与 AI 等条目） |
+| [Shashwat-19/awesome-student-resources](https://github.com/Shashwat-19/awesome-student-resources) | 面向学生的经典 awesome-list |
+| [education/students](https://github.com/education/students) | GitHub Education 学生入口相关 |
+| [GitHub Student Developer Pack](https://education.github.com/pack) | **Copilot**、Azure 额度、DO 等众多合作权益 |
+| [Codex for Students](https://developers.openai.com/community/students) | 面向 Codex 的 **$100 ChatGPT 额度（美加，需核验）** — 官方 |
 
-#### C. Infrastructure: unify many keys behind one OpenAI-shaped endpoint
+#### C. 基础设施：多把 Key 统一成 OpenAI 形态端点
 
-| Project | Role |
-|---------|------|
-| [BerriAI/litellm](https://github.com/BerriAI/litellm) | Standard choice: SDK + **AI Gateway**, 100+ providers, budgets, routing |
-| [songquanpeng/one-api](https://github.com/songquanpeng/one-api) | Key management / redistribution; OpenAI-shaped; Docker |
-| [QuantumNous/new-api](https://github.com/QuantumNous/new-api) | Next-gen fork: billing, auth, more formats (AGPL) |
-| [shenald-dev/one-api](https://github.com/shenald-dev/one-api) | Another unified-gateway variant (verify activity/license for your use) |
-
-Older: [BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) is **deprecated** in favor of main `litellm`.
-
-#### D. Learning / adoption (good cross-links for a student-facing repo)
-
-| Repo | Role |
+| 项目 | 作用 |
 |------|------|
-| [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | Free courseware for Copilot |
+| [BerriAI/litellm](https://github.com/BerriAI/litellm) | 主流方案：SDK + **AI 网关**，100+ 厂商，预算与路由 |
+| [songquanpeng/one-api](https://github.com/songquanpeng/one-api) | Key 管理与转发；OpenAI 兼容；Docker |
+| [QuantumNous/new-api](https://github.com/QuantumNous/new-api) | 新一代 fork：计费、鉴权、更多格式（AGPL） |
+| [shenald-dev/one-api](https://github.com/shenald-dev/one-api) | 另一类统一网关（使用前请自行看协议与活跃度） |
 
-### Red flags (stay legitimate and durable)
+较旧：[BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) 已**弃用**，请以主仓库 `litellm` 为准。
 
-1. **Avoid promoting repos that publish live third-party API keys** or “paste this `sk-…`” lists. That is often **TOS abuse**, **account sharing**, or **fraud-adjacent**, and platforms may remove it. Treat [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys)-style projects as **anti-patterns** for a serious list.
+#### D. 学习与上手（适合做学生向仓库的友链）
 
-2. **Differentiate** from `cheahjs/free-llm-api-resources` et al. by **niche**, not by duplicating tables:
+| 仓库 | 作用 |
+|------|------|
+| [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | 免费 Copilot 配套课程 |
 
-   - **Only** accredited student / educator verification paths (SheerID, GitHub Education, `.edu`, regional programs).
-   - **Only** API-oriented offers vs chat-only.
-   - **Regional matrix** (US/CA/EU/IN…) with **last-checked date** and **primary source link**.
-   - **“Stack recipes”**: e.g. GitHub Pack → Copilot + Azure → LiteLLM config skeleton.
+### 红线（要长期可做、就别碰这些）
 
-3. **Legal copy:** links are informational; eligibility and terms are set by each vendor; no affiliation; comply with ToS.
+1. **不要推广公开贴第三方 API Key、或「复制这段 `sk-…`」类仓库。** 常见问题：**违反 ToS**、账号共享或近似欺诈，平台可能下架。把 [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) 这类当作**反面教材**。
 
-### Bottom line for this project
+2. 与 `cheahjs/free-llm-api-resources` 等「全集表」**差异化**要靠**细分定位**，而不是再抄一张大表：
 
-- **Discovery layer:** niche is **student-verified AI & API access + free tiers**, with strict sourcing—not a generic free-key dump.  
-- **Infra layer:** **[LiteLLM](https://github.com/BerriAI/litellm)** for unified routing; optionally **[one-api](https://github.com/songquanpeng/one-api)** / **[new-api](https://github.com/QuantumNous/new-api)** for key pool management—**pooling must respect each provider’s terms**.
+   - **只收**正规学生/教职工验证路径（SheerID、GitHub Education、`.edu`、各地区项目）。
+   - **区分** API 向 vs 纯聊天产品。
+   - **区域矩阵**（美/加/欧/印…）+ **最后核查日期** + **一手链接**。
+   - **「组合打法」**：如 GitHub Pack → Copilot + Azure → LiteLLM 配置骨架。
+
+3. **法律声明**：链接仅供信息参考；资格与条款以各厂商为准；本站无商业隶属关系；请遵守 ToS。
+
+### 本项目小结
+
+- **发现层**：定位为**学生核验 + AI/API 免费层**，来源要严——不是「全网免费送 Key」。  
+- **基础设施层**：统一路由用 **[LiteLLM](https://github.com/BerriAI/litellm)**；可选 **[one-api](https://github.com/songquanpeng/one-api)** / **[new-api](https://github.com/QuantumNous/new-api)** 做 Key 池管理——**池化仍须遵守各厂商条款**。
 
 ---
 
-## Free / quota‑based LLM **APIs** (legit provider tiers)
+## 免费 / 按额度的 LLM **API**（合规厂商层）
 
-These are **not** “student only,” but they are the backbone of **zero‑cost dev** when combined with education chat offers:
+这些**不是**「仅学生」，但与教育场景的聊天权益叠加后，是**零成本开发**的主力：
 
-- **Google AI Studio (Gemini API)** — [`ai.google.dev`](https://ai.google.dev)
+- **Google AI Studio（Gemini API）** — [`ai.google.dev`](https://ai.google.dev)
 - **Groq** — [`console.groq.com`](https://console.groq.com)
-- **OpenRouter (free model routes)** — [`openrouter.ai`](https://openrouter.ai)
-- **Cloudflare Workers AI** — docs via Cloudflare dashboard
-- **GitHub Models** — tied to GitHub account / Copilot plan; see GitHub docs
-- **Mistral / Cohere / NVIDIA NIM / Together / etc.** — often have **small perpetual free tiers** or **trial credits**; read the pricing footnotes (phone verify, training opt‑in, etc.)
+- **OpenRouter（含免费模型路由）** — [`openrouter.ai`](https://openrouter.ai)
+- **Cloudflare Workers AI** — 见 Cloudflare 控制台文档
+- **GitHub Models** — 与 GitHub 账号/Copilot 等绑定；见 GitHub 文档
+- **Mistral / Cohere / NVIDIA NIM / Together 等** — 常有**小额长期免费层**或**试用金**；注意脚注（手机号验证、是否参与训练等）
 
-**Pattern:** most OpenAI‑compatible providers accept:
+**惯用法：**多数 OpenAI 兼容厂商可用：
 
 ```python
 from openai import OpenAI
@@ -158,101 +158,101 @@ client = OpenAI(
 )
 ```
 
-Advanced routing: [**LiteLLM**](https://github.com/BerriAI/litellm) (single entrypoint to many backends).  
-**GitHub Copilot → OpenAI‑compatible local proxy** is described in community writeups (e.g. LiteLLM + Copilot); treat as **personal dev only**, subject to Copilot **rate limits** and policy.
+进阶路由：[**LiteLLM**](https://github.com/BerriAI/litellm)（单入口对接多后端）。  
+社区有 **GitHub Copilot → OpenAI 兼容本地代理**（如 LiteLLM + Copilot）等写法；请视为**个人开发**，并遵守 Copilot **限流**与政策。
 
 ---
 
-## 56+ GitHub repositories surveyed (bookmark list)
+## 56+ 个已调研 GitHub 仓库（书签表）
 
-> **Legend:** ⭐ = large “awesome / directory” style list; 🎓 = student offer write‑up / education angle; 🛠 = client, gateway, or local runtime that **uses** free backends; ⚠ = third‑party relay / grey‑area risk—read licenses & ToS yourself.
+> **图例：** ⭐ = 大型「awesome/目录」式列表；🎓 = 学生优惠/教育角度说明；🛠 = 客户端、网关或可接免费后端的本地运行时；⚠ = 第三方转发/灰区风险—请自行阅读许可证与 ToS。
 
-| # | Repository | Role |
-|---|------------|------|
-| 1 | [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | ⭐ Broad directory of free / trial API providers |
-| 2 | [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | ⭐ Curated “permanent free tier” API list |
-| 3 | [bradAGI/awesome-free-inference](https://github.com/bradAGI/awesome-free-inference) | ⭐ Tiered guide (no card / trials / self‑host) |
-| 4 | [amardeeplakshkar/awesome-free-llm-apis](https://github.com/amardeeplakshkar/awesome-free-llm-apis) | ⭐ Fork‑style curated list + comparison tables |
-| 5 | [nejib1/Free-LLM](https://github.com/nejib1/Free-LLM) | ⭐ Directory + site companion |
-| 6 | [zebbern/no-cost-ai](https://github.com/zebbern/no-cost-ai) | ⭐ Very wide “no‑cost” services index (chat + media) |
-| 7 | [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai) | ⭐ Mega‑list (GenAI tools, APIs, UIs) |
-| 8 | [nherx/free-llm-api-resources](https://github.com/nherx/free-llm-api-resources) | ⭐ Community packaging around free‑API list |
-| 9 | [KI-IAN/free-llm-api-resources-forked](https://github.com/KI-IAN/free-llm-api-resources-forked) | ⭐ Fork tracking upstream free‑API list |
-| 10 | [mto67200/perplexity-student-pro](https://github.com/mto67200/perplexity-student-pro) | 🎓 Student Perplexity Pro guide (verify against live Perplexity policies) |
-| 11 | [popjane/free_chatgpt_api](https://github.com/popjane/free_chatgpt_api) | ⚠ Community OpenAI‑shape endpoint; **non‑official** |
-| 12 | [Kourva/AwesomeChatGPTBot](https://github.com/Kourva/AwesomeChatGPTBot) | ⚠ Telegram bot multiplexing “free providers” |
-| 13 | [ChatTeach/FreeGPT](https://github.com/ChatTeach/FreeGPT) | ⚠ Web UI stacking unpaid access paths |
-| 14 | [BerriAI/litellm](https://github.com/BerriAI/litellm) | 🛠 Unified proxy / router for many LLM backends |
-| 15 | [ollama/ollama](https://github.com/ollama/ollama) | 🛠 Local inference runner (hardware = “free tier”) |
-| 16 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | 🛠 Self‑hosted UI for many model backends |
-| 17 | [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat) | 🛠 Open chat client; plug in official keys |
-| 18 | [ChatGPTNextWeb/ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) | 🛠 Next.js client for OpenAI‑compatible endpoints |
-| 19 | [continuedev/continue](https://github.com/continuedev/continue) | 🛠 IDE assistant; bring your own model / endpoint |
-| 20 | [songquanpeng/one-api](https://github.com/songquanpeng/one-api) | 🛠 API gateway / key pool (self‑host; compliance is on you) |
-| 21 | [QuantumNous/new-api](https://github.com/QuantumNous/new-api) | 🛠 LLM gateway fork ecosystem (billing, auth; AGPL) |
-| 22 | [Calcium-Ion/new-api](https://github.com/Calcium-Ion/new-api) | 🛠 Related new-api lineage (verify which fork you deploy) |
-| 23 | [shenald-dev/one-api](https://github.com/shenald-dev/one-api) | 🛠 Unified-gateway variant (check license/activity) |
-| 24 | [mudler/LocalAI](https://github.com/mudler/LocalAI) | 🛠 OpenAI‑compatible local server |
-| 25 | [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) | 🛠 Efficient CPU/GPU inference for local weights |
-| 26 | [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) | 🛠 Multi‑provider chat UI |
-| 27 | [mckaywrigley/chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) | 🛠 Simple OSS chat UI |
-| 28 | [Bin-Huang/chatbox](https://github.com/Bin-Huang/chatbox) | 🛠 Cross‑platform desktop client |
-| 29 | [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) | 📚 Prompt patterns (quality over raw tokens) |
-| 30 | [openai/openai-cookbook](https://github.com/openai/openai-cookbook) | 📚 Official patterns & examples |
-| 31 | [google-gemini/cookbook](https://github.com/google-gemini/cookbook) | 📚 Gemini API examples |
-| 32 | [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners) | 📚 Beginner GenAI course (incl. Azure notes) |
-| 33 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 🛠 App framework; swap free backends easily |
-| 34 | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🛠 RAG / agents; plug in free embeddings models |
-| 35 | [huggingface/transformers](https://github.com/huggingface/transformers) | 🛠 Model zoo + inference building blocks |
-| 36 | [huggingface/chat-ui](https://github.com/huggingface/chat-ui) | 🛠 OSS chat UI from HF ecosystem |
-| 37 | [vercel/ai](https://github.com/vercel/ai) | 🛠 TS SDK for streaming UIs (pair with free APIs) |
-| 38 | [AntonOsika/gpt-engineer](https://github.com/AntonOsika/gpt-engineer) | 🛠 Codegen CLI (BYO API key) |
-| 39 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 🛠 Agent experiments (BYO keys; mind cost) |
-| 40 | [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | 🛠 Agent platform (BYO endpoints) |
-| 41 | [KillianLucas/open-interpreter](https://github.com/KillianLucas/open-interpreter) | 🛠 Local/remote code exec assistant |
-| 42 | [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | 🛠 🇨🇳 Local knowledge‑base + models |
-| 43 | [binary-husky/gpt_academic](https://github.com/binary-husky/gpt_academic) | 🛠 Research oriented chat/tooling |
-| 44 | [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) | 🛠 ML testing / LLM eval (open core) |
-| 45 | [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui) | 🛠 Web UI for local LLM weights |
-| 46 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🛠 Fast inference server (self‑host GPUs) |
-| 47 | [skypilot-org/skypilot](https://github.com/skypilot-org/skypilot) | 🛠 Train/serve across clouds—use **student credits** smartly |
-| 48 | [huggingface/agents-course](https://github.com/huggingface/agents-course) | 📚 HF agents course (free materials) |
-| 49 | [anthropics/courses](https://github.com/anthropics/courses) | 📚 Anthropic educational course notebooks |
-| 50 | [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners) | 📚 Intro AI curriculum (incl. low‑cost options) |
-| 51 | [mlabonne/llm-course](https://github.com/mlabonne/llm-course) | 📚 Hands‑on LLM course repo |
-| 52 | [datawhalechina/hugging-llm](https://github.com/datawhalechina/hugging-llm) | 📚 🇨🇳 Datawhale “Hugging LLM” open book / code |
-| 53 | [jhaxce/student-perks](https://github.com/jhaxce/student-perks) | 🎓 Curated student benefits DB (cloud + AI rows) |
-| 54 | [Shashwat-19/awesome-student-resources](https://github.com/Shashwat-19/awesome-student-resources) | 🎓 Awesome-list: courses, cloud, AI tools for students |
-| 55 | [education/students](https://github.com/education/students) | 🎓 GitHub Education “students” hub repository |
-| 56 | [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | 📚 Free multi-module Copilot / peer-programming course |
-| — | [Gist: sudhxnva – Copilot + LiteLLM OpenAI‑compatible proxy](https://gist.github.com/sudhxnva/78172d7a46bf4a1e5663fc487c136121) | 🎓 Setup recipe (personal use; obey Copilot caps) |
-
----
-
-## Related reading
-
-- [Vibe coding IDEs: a brief comparison](https://koutian.is-a.dev/posts/2025/12/vibe-coding-ides-brief-comparison-en/) — companion note on AI‑assisted editors and workflows alongside free tokens and student tooling.
+| # | 仓库 | 说明 |
+|---|------|------|
+| 1 | [cheahjs/free-llm-api-resources](https://github.com/cheahjs/free-llm-api-resources) | ⭐ 免费/试用 API 厂商大全 |
+| 2 | [mnfst/awesome-free-llm-apis](https://github.com/mnfst/awesome-free-llm-apis) | ⭐ 偏「长期免费层」的 API 列表 |
+| 3 | [bradAGI/awesome-free-inference](https://github.com/bradAGI/awesome-free-inference) | ⭐ 分层指南（免绑卡 / 试用 / 自建） |
+| 4 | [amardeeplakshkar/awesome-free-llm-apis](https://github.com/amardeeplakshkar/awesome-free-llm-apis) | ⭐ fork 风格整理 + 对比表 |
+| 5 | [nejib1/Free-LLM](https://github.com/nejib1/Free-LLM) | ⭐ 目录 + 配套站点 |
+| 6 | [zebbern/no-cost-ai](https://github.com/zebbern/no-cost-ai) | ⭐ 很广的「零成本」服务索引（聊天+媒体） |
+| 7 | [steven2358/awesome-generative-ai](https://github.com/steven2358/awesome-generative-ai) | ⭐ 超大列表（GenAI 工具、API、UI） |
+| 8 | [nherx/free-llm-api-resources](https://github.com/nherx/free-llm-api-resources) | ⭐ 围绕免费 API 列表的社区打包 |
+| 9 | [KI-IAN/free-llm-api-resources-forked](https://github.com/KI-IAN/free-llm-api-resources-forked) | ⭐ 跟踪上游免费 API 列表的 fork |
+| 10 | [mto67200/perplexity-student-pro](https://github.com/mto67200/perplexity-student-pro) | 🎓 Perplexity 学生 Pro 说明（以 Perplexity 现行政策为准） |
+| 11 | [popjane/free_chatgpt_api](https://github.com/popjane/free_chatgpt_api) | ⚠ 社区 OpenAI 形态端点；**非官方** |
+| 12 | [Kourva/AwesomeChatGPTBot](https://github.com/Kourva/AwesomeChatGPTBot) | ⚠ Telegram 机器人聚合「免费源」 |
+| 13 | [ChatTeach/FreeGPT](https://github.com/ChatTeach/FreeGPT) | ⚠ Web UI 堆叠非付费访问路径 |
+| 14 | [BerriAI/litellm](https://github.com/BerriAI/litellm) | 🛠 多后端统一代理/路由器 |
+| 15 | [ollama/ollama](https://github.com/ollama/ollama) | 🛠 本地推理（硬件即「免费层」） |
+| 16 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | 🛠 自托管多模型 UI |
+| 17 | [lobehub/lobe-chat](https://github.com/lobehub/lobe-chat) | 🛠 开源聊天客户端；自备官方 Key |
+| 18 | [ChatGPTNextWeb/ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) | 🛠 Next.js 客户端接 OpenAI 兼容端点 |
+| 19 | [continuedev/continue](https://github.com/continuedev/continue) | 🛠 IDE 助手；自带模型/端点 |
+| 20 | [songquanpeng/one-api](https://github.com/songquanpeng/one-api) | 🛠 API 网关 / Key 池（自建；合规自负） |
+| 21 | [QuantumNous/new-api](https://github.com/QuantumNous/new-api) | 🛠 new-api 系网关（计费、鉴权；AGPL） |
+| 22 | [Calcium-Ion/new-api](https://github.com/Calcium-Ion/new-api) | 🛠 同系不同 fork（部署前请比对） |
+| 23 | [shenald-dev/one-api](https://github.com/shenald-dev/one-api) | 🛠 另一类统一网关（请看协议/活跃度） |
+| 24 | [mudler/LocalAI](https://github.com/mudler/LocalAI) | 🛠 OpenAI 兼容本地服务端 |
+| 25 | [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) | 🛠 本地权重的高效 CPU/GPU 推理 |
+| 26 | [danny-avila/LibreChat](https://github.com/danny-avila/LibreChat) | 🛠 多厂商聊天 UI |
+| 27 | [mckaywrigley/chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) | 🛠 简易开源聊天 UI |
+| 28 | [Bin-Huang/chatbox](https://github.com/Bin-Huang/chatbox) | 🛠 跨平台桌面客户端 |
+| 29 | [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) | 📚 提示词模式（质量 > 单纯抠 token） |
+| 30 | [openai/openai-cookbook](https://github.com/openai/openai-cookbook) | 📚 官方示例与范式 |
+| 31 | [google-gemini/cookbook](https://github.com/google-gemini/cookbook) | 📚 Gemini API 示例 |
+| 32 | [microsoft/generative-ai-for-beginners](https://github.com/microsoft/generative-ai-for-beginners) | 📚 生成式 AI 入门课（含 Azure 笔记） |
+| 33 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 🛠 应用框架；易切换免费后端 |
+| 34 | [run-llama/llama_index](https://github.com/run-llama/llama_index) | 🛠 RAG / Agent；可接免费嵌入模型 |
+| 35 | [huggingface/transformers](https://github.com/huggingface/transformers) | 🛠 模型库 + 推理基础组件 |
+| 36 | [huggingface/chat-ui](https://github.com/huggingface/chat-ui) | 🛠 HF 生态聊天 UI |
+| 37 | [vercel/ai](https://github.com/vercel/ai) | 🛠 流式 UI 用 TS SDK（可配免费 API） |
+| 38 | [AntonOsika/gpt-engineer](https://github.com/AntonOsika/gpt-engineer) | 🛠 代码生成 CLI（自备 API Key） |
+| 39 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 🛠 Agent 实验（自备 Key；注意费用） |
+| 40 | [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | 🛠 Agent 平台（自备端点） |
+| 41 | [KillianLucas/open-interpreter](https://github.com/KillianLucas/open-interpreter) | 🛠 本地/远端代码执行助手 |
+| 42 | [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) | 🛠 🇨🇳 本地知识库 + 模型 |
+| 43 | [binary-husky/gpt_academic](https://github.com/binary-husky/gpt_academic) | 🛠 偏研究与论文向聊天/工具 |
+| 44 | [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) | 🛠 ML / LLM 评测（open core） |
+| 45 | [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui) | 🛠 本地权重 Web UI |
+| 46 | [vllm-project/vllm](https://github.com/vllm-project/vllm) | 🛠 高性能推理服务（自建 GPU） |
+| 47 | [skypilot-org/skypilot](https://github.com/skypilot-org/skypilot) | 🛠 多云训练/部署—配合**学生云额度** |
+| 48 | [huggingface/agents-course](https://github.com/huggingface/agents-course) | 📚 HF Agent 课程（免费材料） |
+| 49 | [anthropics/courses](https://github.com/anthropics/courses) | 📚 Anthropic 教学 notebooks |
+| 50 | [microsoft/AI-For-Beginners](https://github.com/microsoft/AI-For-Beginners) | 📚 入门 AI 课（含低成本路径） |
+| 51 | [mlabonne/llm-course](https://github.com/mlabonne/llm-course) | 📚 LLM 动手课仓库 |
+| 52 | [datawhalechina/hugging-llm](https://github.com/datawhalechina/hugging-llm) | 📚 🇨🇳 Datawhale《拥抱大模型》开源书/代码 |
+| 53 | [jhaxce/student-perks](https://github.com/jhaxce/student-perks) | 🎓 学生福利整理（云 + AI 等） |
+| 54 | [Shashwat-19/awesome-student-resources](https://github.com/Shashwat-19/awesome-student-resources) | 🎓 学生向 awesome：课程、云、AI |
+| 55 | [education/students](https://github.com/education/students) | 🎓 GitHub Education「学生」枢纽仓 |
+| 56 | [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | 📚 免费多模块 Copilot / 结对编程课 |
+| — | [Gist: sudhxnva – Copilot + LiteLLM OpenAI 兼容代理](https://gist.github.com/sudhxnva/78172d7a46bf4a1e5663fc487c136121) | 🎓 搭建示例（个人使用；遵守 Copilot 限额） |
 
 ---
 
-## Contributing
+## 延伸阅读
 
-PRs welcome for:
-
-- **New official** student / educator URLs (must be vendor pages, not affiliate spam)
-- **Corrections** when an offer expires (date + archive link if possible)
-- **Extra** high‑quality GitHub lists that are **actively maintained**
-
-Please **do not** submit: shared paid API keys, stolen credentials, or instructions whose **primary** purpose is ToS evasion.
+- [Vibe Coding IDE 简评](https://koutian.is-a.dev/posts/2025/12/vibe-coding-ides-brief-comparison/) — 与免费额度、学生向工具链配套的 AI 辅助编辑器与工作流随笔。
 
 ---
 
-## Disclaimer
+## 贡献
 
-Information is **informational** and may be **out of date** the day after we write it. **You** are responsible for compliance with laws, school AI policies, and provider Terms. When in doubt, use **official** education programs and **documented** free quotas.
+欢迎 PR：
+
+- **新增官方**学生/教育工作者链接（须为厂商页面，拒接引流/联盟垃圾）
+- **更正**已结束的活动（尽量带日期 + 存档链接）
+- **补充**仍在**积极维护**的高质量 GitHub 列表
+
+请勿提交：共享的付费 API Key、盗窃凭证，或**主要目的**为逃避 ToS 的说明。
 
 ---
 
-## License
+## 免责声明
 
-This repository is dedicated to the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). See the [`LICENSE`](LICENSE) file in the repo root. External sites and third‑party repositories linked here keep their own licenses.
+内容仅供**信息参考**，可能在发布次日即**过期**。**你**需自行遵守法律、学校 AI 政策与厂商条款。不确定时，请优先使用**官方**教育项目与**文档记载**的免费额度。
+
+---
+
+## 许可证
+
+本仓库以 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) 释至公有领域。详见仓库根目录 [`LICENSE`](LICENSE)。外链网站与第三方仓库仍适用其各自许可证。
