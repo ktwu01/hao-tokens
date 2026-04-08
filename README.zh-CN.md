@@ -1,5 +1,13 @@
 # 薅 tokens · hao-tokens
 
+[![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
+[![GitHub stars](https://img.shields.io/github/stars/kw35262/hao-tokens?style=flat&logo=github)](https://github.com/kw35262/hao-tokens/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kw35262/hao-tokens?style=flat&logo=github)](https://github.com/kw35262/hao-tokens/fork)
+![Last Verified](https://img.shields.io/badge/last%20verified-March%202026-brightgreen)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
+![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
+![Providers](https://img.shields.io/badge/providers-12-orange)
+
 **精选索引：学生/教育工作者的 AI 权益、官方免费额度，以及合规的「零成本 API」参考。**  
 本仓库是**手册 + 链接枢纽**，不是破解或共享凭证项目。请优先使用**官方**教育优惠与**厂商公开说明**的免费额度，并遵守各平台服务条款（ToS）。
 

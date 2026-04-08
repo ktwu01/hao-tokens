@@ -1,5 +1,13 @@
 # 薅 tokens · hao-tokens
 
+[![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
+[![GitHub stars](https://img.shields.io/github/stars/kw35262/hao-tokens?style=flat&logo=github)](https://github.com/kw35262/hao-tokens/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kw35262/hao-tokens?style=flat&logo=github)](https://github.com/kw35262/hao-tokens/fork)
+![Last Verified](https://img.shields.io/badge/last%20verified-March%202026-brightgreen)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
+![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
+![Providers](https://img.shields.io/badge/providers-12-orange)
+
 [简体中文](README.zh-CN.md) · English below
 
 **Curated index: student / educator AI benefits, official free tiers, and legit “zero‑cost API” references.**  
