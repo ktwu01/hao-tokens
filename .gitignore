@@ -15,3 +15,6 @@
 .env
 .env.*
 *.local
+
+# Disposable shallow clones for offline review (see README → “Local reference mirrors”)
+tmp/*
