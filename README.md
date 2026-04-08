@@ -8,10 +8,24 @@
 ![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
 ![Providers](https://img.shields.io/badge/providers-12-orange)
 
-[简体中文](README.zh-CN.md) · English below
+---
 
-**Curated index: student / educator AI benefits, official free tiers, and legit “zero‑cost API” references.**  
-This repo is a **handbook + link hub**, not a crack or credential sharing project. Prefer **official** education offers and **published** free quotas; respect each provider’s Terms of Service.
+## Official student / education entry points (verify on the provider site)
+
+| Product | Official links | Notes (high level; **confirm latest terms yourself**) |
+|---------|----------------|--------------------------------------------------------|
+| **GitHub Copilot (Student)** | [GitHub Education – Students](https://education.github.com/students), [Copilot for students](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student), [Education benefits](https://github.com/settings/education/benefits) | Verified students/teachers may get **Copilot**; pairs with **GitHub Models** and IDE flows. |
+| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | Partner bundle; includes AI‑adjacent perks (**Notion Education + AI**, **Camber** LLM quotas, etc.—read each offer). |
+| **Google Gemini (students)** | [Gemini for Students](https://gemini.google/students/) | Promos **vary by region/time**; some regions ran a **12‑month** student deal; pages may emphasize **trials**—see live FAQ. |
+| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education), [Education Pro](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | Pricing **evolves**; edu verification (e.g. **SheerID**) is common; trust **official** copy only. |
+| **OpenAI – ChatGPT / Edu / Codex** | [Students landing](https://chat.openai.com/college-students/), [ChatGPT Education](https://openai.com/chatgpt/education), [Codex for Students](https://developers.openai.com/community/students) | Promos often **time‑boxed / region‑specific**; **Edu** is usually **institution‑purchased**; **Codex** ~**$100** credits for verified **US/CA** students (per official page). |
+| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | Cloud credits; **hosting** and **Azure OpenAI** experiments where allowed. |
+
+**Otter.ai:** Transcription‑focused. **Basic** is free (limits); **Pro** has a [student & teacher discount](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan) (often `.edu`). See [otter.ai/pricing](https://otter.ai/pricing).
+
+---
+
+**Handbook + link hub** — student/educator AI benefits & legit free API refs; not key sharing · [简体中文](README.zh-CN.md)
 
 ---
 
@@ -102,28 +116,6 @@ Older: [BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) is **de
 |------|------|
 | [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | Free courseware for Copilot |
 
-### Official “student / education” programs (web; confirm on live site)
-
-**Link only to provider docs in your PRs**; third-party blogs drift quickly.
-
-- **Google Gemini (students)**  
-  Official: [Gemini for Students](https://gemini.google/students/).  
-  As of early 2026, many regions’ **12‑month student promo** had ended; pages often emphasize a **shorter Google AI Pro trial**. **Always confirm on the live page.**
-
-- **Perplexity**  
-  Official education: [perplexity.com/education](https://www.perplexity.com/education)  
-  Help center: [Education Pro](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) — verified students/faculty, **~50% off** ($10/mo vs $20 in help-center copy).  
-  Older blog posts may describe superseded “free year” promos; treat as **historical** unless Perplexity confirms.
-
-- **OpenAI / ChatGPT**  
-  Institutional: [ChatGPT Education (Edu)](https://openai.com/chatgpt/education) (schools buy; not an individual “free Pro” toggle).  
-  Past **US/CA ChatGPT Plus student promos** were **time-boxed**; check [openai.com](https://openai.com) and in-product offers for current deals.  
-  **Codex for Students**: [developers.openai.com/community/students](https://developers.openai.com/community/students) — **$100 credits**, US/CA verified students.
-
-- **Otter.ai**  
-  Student/teacher: [Otter Help Center – Student & Teacher discount](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)  
-  **20% off Pro** for eligible **.edu** individual plans; **Basic** is a real free tier (minute/import caps). Pricing: [otter.ai/pricing](https://otter.ai/pricing).
-
 ### Red flags (stay legitimate and durable)
 
 1. **Avoid promoting repos that publish live third-party API keys** or “paste this `sk-…`” lists. That is often **TOS abuse**, **account sharing**, or **fraud-adjacent**, and platforms may remove it. Treat [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys)-style projects as **anti-patterns** for a serious list.
@@ -141,21 +133,6 @@ Older: [BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) is **de
 
 - **Discovery layer:** niche is **student-verified AI & API access + free tiers**, with strict sourcing—not a generic free-key dump.  
 - **Infra layer:** **[LiteLLM](https://github.com/BerriAI/litellm)** for unified routing; optionally **[one-api](https://github.com/songquanpeng/one-api)** / **[new-api](https://github.com/QuantumNous/new-api)** for key pool management—**pooling must respect each provider’s terms**.
-
----
-
-## Official student / education entry points (verify on the provider site)
-
-| Product | What to check (official) | Notes (high level; **confirm before relying**) |
-|--------|---------------------------|--------------------------------------------------|
-| **GitHub Copilot (Student)** | [GitHub Education – Students](https://education.github.com/students), [Copilot for students](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student), [Education benefits settings](https://github.com/settings/education/benefits) | Verified students/teachers may get **Copilot** access; pairs with **GitHub Models** and IDE flows. |
-| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | Bundle of partner offers; includes AI‑adjacent perks (e.g. items that mention **Notion Education + AI**, **Camber** LLM message quotas, etc.—read each offer). |
-| **Google Gemini (students page)** | [Gemini for Students](https://gemini.google/students/) | Promotions **change by region/time**. Many regions previously ran a **12‑month student promo**; pages may now emphasize **trials** or alternate wording—read the FAQ on the live site. |
-| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education), [Education Pro help](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | Programs and pricing **evolve**; edu verification (e.g. **SheerID**) is common. |
-| **OpenAI – ChatGPT / Edu** | [ChatGPT for students landing](https://chat.openai.com/college-students/), [ChatGPT Education (Edu)](https://openai.com/chatgpt/education) | **Time‑boxed** student promos have appeared in the past (region‑specific); **ChatGPT Edu** is typically **institution‑purchased**, not a personal toggle. |
-| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | Cloud credits; useful for **hosting** and **Azure OpenAI** experiments where allowed. |
-
-**Otter (Otter.ai):** transcription + meeting AI; not LLM-API-centric but common for students. **Basic** tier is free (limits); **Pro** has a **[student & teacher discount](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)** (e.g. `.edu` individual plans). See **[pricing](https://otter.ai/pricing)** and help center for current eligibility.
 
 ---
 
