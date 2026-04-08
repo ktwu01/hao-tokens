@@ -8,10 +8,24 @@
 ![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
 ![Providers](https://img.shields.io/badge/providers-12-orange)
 
-**精选索引：学生/教育工作者的 AI 权益、官方免费额度，以及合规的「零成本 API」参考。**  
-本仓库是**手册 + 链接枢纽**，不是破解或共享凭证项目。请优先使用**官方**教育优惠与**厂商公开说明**的免费额度，并遵守各平台服务条款（ToS）。
+---
 
-[English README](README.md)
+## 官方学生 / 教育入口（请在厂商站点再次确认）
+
+| 产品 | 官方核对入口 | 备注（概括；**使用前请自行确认最新条款**） |
+|------|----------------|------------------------------------------|
+| **GitHub Copilot（学生）** | [GitHub Education – Students](https://education.github.com/students)、[学生 Copilot 说明](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student)、[教育权益设置](https://github.com/settings/education/benefits) | 核验通过的学生/教师可获得 **Copilot**；可与 **GitHub Models**、IDE 工作流搭配。 |
+| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | 合作方权益合集；含 AI 相关项（如 **Notion Education + AI**、**Camber** LLM 条数等——请逐条阅读）。 |
+| **Google Gemini（学生页）** | [Gemini for Students](https://gemini.google/students/) | 活动**随地区/时间变化**；多地曾推 **12 个月**学生方案，现页面可能侧重**试用**——请看站内 FAQ。 |
+| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education)、[Education Pro 帮助](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | 价格在演变；学历核验（如 **SheerID**）常见；以官方为准。 |
+| **OpenAI – ChatGPT / Edu / Codex** | [学生落地页示例](https://chat.openai.com/college-students/)、[ChatGPT Education](https://openai.com/chatgpt/education)、[Codex for Students](https://developers.openai.com/community/students) | 促销多**限时、分地区**；**Edu** 多为学校采购；**Codex** 美加学生约 **$100** 额度（以官方为准）。 |
+| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | 云额度；在允许范围内可用于**托管**与 **Azure OpenAI** 实验。 |
+
+**Otter.ai：** 转写向。**Basic** 免费（有额度）；**Pro** [师生优惠](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)（常见 `.edu`）。价目 [otter.ai/pricing](https://otter.ai/pricing)。
+
+---
+
+**精选索引：**学生/教育 AI 权益与合规免费 API · 手册非破解 · [English](README.md)
 
 ---
 
@@ -102,28 +116,6 @@
 |------|------|
 | [microsoft/Mastering-GitHub-Copilot-for-Paired-Programming](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) | 免费 Copilot 配套课程 |
 
-### 官方「学生 / 教育」项目（网页；以**实时页面**为准）
-
-**PR 里请只链到厂商文档**；第三方博文容易过时。
-
-- **Google Gemini（学生）**  
-  官方：[Gemini for Students](https://gemini.google/students/)。  
-  2026 年初多地 **12 个月学生活动**已结束；页面可能突出**较短的 Google AI Pro 试用**。**务必以当前页面 FAQ 为准。**
-
-- **Perplexity**  
-  教育站：[perplexity.com/education](https://www.perplexity.com/education)  
-  帮助中心：[Education Pro](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) — 核验通过的学生/教职工约 **5 折**（帮助中心写 $10/月 vs $20）。  
-  旧博文若写「免费一年」等，可能已失效；以 Perplexity **官方**为准。
-
-- **OpenAI / ChatGPT**  
-  机构采购：[ChatGPT Education (Edu)](https://openai.com/chatgpt/education)（学校购买；不是个人点一下「免费 Pro」）。  
-  **美加**等地的 ChatGPT Plus 学生活动多为**限时**；当前请以 [openai.com](https://openai.com) 与产品内说明为准。  
-  **Codex for Students**：[developers.openai.com/community/students](https://developers.openai.com/community/students) — **$100 额度**，美加核验学生。
-
-- **Otter.ai**  
-  师生优惠：[Otter 帮助中心 – Student & Teacher discount](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)  
-  符合条件（如个人 **.edu**）**Pro 约 8 折**；**Basic** 为真实免费层（分钟数/导入次数有限）。定价：[otter.ai/pricing](https://otter.ai/pricing)。
-
 ### 红线（要长期可做、就别碰这些）
 
 1. **不要推广公开贴第三方 API Key、或「复制这段 `sk-…`」类仓库。** 常见问题：**违反 ToS**、账号共享或近似欺诈，平台可能下架。把 [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) 这类当作**反面教材**。
@@ -141,21 +133,6 @@
 
 - **发现层**：定位为**学生核验 + AI/API 免费层**，来源要严——不是「全网免费送 Key」。  
 - **基础设施层**：统一路由用 **[LiteLLM](https://github.com/BerriAI/litellm)**；可选 **[one-api](https://github.com/songquanpeng/one-api)** / **[new-api](https://github.com/QuantumNous/new-api)** 做 Key 池管理——**池化仍须遵守各厂商条款**。
-
----
-
-## 官方学生 / 教育入口（请在厂商站点再次确认）
-
-| 产品 | 官方核对入口 | 备注（概括；**使用前请自行确认最新条款**） |
-|------|----------------|------------------------------------------|
-| **GitHub Copilot（学生）** | [GitHub Education – Students](https://education.github.com/students)、[学生 Copilot 说明](https://docs.github.com/copilot/how-tos/manage-your-account/free-access-with-copilot-student)、[教育权益设置](https://github.com/settings/education/benefits) | 核验通过的学生/教师可获得 **Copilot**；可与 **GitHub Models**、IDE 工作流搭配。 |
-| **GitHub Student Developer Pack** | [Student Developer Pack](https://education.github.com/pack/) | 合作方权益合集；含 AI 相关项（如 **Notion Education + AI**、**Camber** LLM 条数等——请逐条阅读）。 |
-| **Google Gemini（学生页）** | [Gemini for Students](https://gemini.google/students/) | 活动**随地区/时间变化**；多地曾推 **12 个月**学生方案，现页面可能侧重**试用**或不同表述——请看站内 FAQ。 |
-| **Perplexity – Education** | [Perplexity for Education](https://www.perplexity.com/education)、[Education Pro 帮助](https://www.perplexity.ai/help-center/en/articles/12590157-what-is-education-pro) | 政策与价格在演化学历核验（如 **SheerID**）很常见。 |
-| **OpenAI – ChatGPT / Edu** | [学生落地页示例](https://chat.openai.com/college-students/)、[ChatGPT Education](https://openai.com/chatgpt/education) | 学生促销多为**限时、分地区**；**ChatGPT Edu** 一般为**学校采购**，非个人开关。 |
-| **Microsoft – Azure for Students** | [Azure for Students](https://azure.microsoft.com/free/students/) | 云额度；在允许范围内可用于**托管**与 **Azure OpenAI** 实验。 |
-
-**Otter（Otter.ai）：** 会议转写类 AI，不主攻 LLM API，但学生常用。**Basic** 免费（有额度）；**Pro** 有 **[师生优惠说明](https://help.otter.ai/hc/en-us/articles/4402467517847-Student-Teacher-discount-program-for-the-Pro-plan)**（如个人 `.edu`）。资格与价格见 **[pricing](https://otter.ai/pricing)** 与帮助中心。
 
 ---
 
