@@ -6,7 +6,7 @@
 ![Last Verified](https://img.shields.io/badge/last%20verified-April%202026-brightgreen)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
 ![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
-![Providers](https://img.shields.io/badge/providers-12-orange)
+![Providers](https://img.shields.io/badge/providers-18-orange)
 
 ---
 
@@ -138,28 +138,88 @@ Older: [BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) is **de
 
 ## Free / quota‑based LLM **APIs** (legit provider tiers)
 
-These are **not** “student only,” but they are the backbone of **zero‑cost dev** when combined with education chat offers:
+These are **not** “student only,” but together with education chat perks they form the backbone of **zero‑cost dev**. **Quotas, rate limits, and model lists drift**, so always re‑confirm on the provider page.
 
-- **Google AI Studio (Gemini API)** — [`ai.google.dev`](https://ai.google.dev)
-- **Groq** — [`console.groq.com`](https://console.groq.com)
-- **OpenRouter (free model routes)** — [`openrouter.ai`](https://openrouter.ai)
-- **Cloudflare Workers AI** — docs via Cloudflare dashboard
-- **GitHub Models** — tied to GitHub account / Copilot plan; see GitHub docs
-- **Mistral / Cohere / NVIDIA NIM / Together / etc.** — often have **small perpetual free tiers** or **trial credits**; read the pricing footnotes (phone verify, training opt‑in, etc.)
+### Provider cheat sheet
 
-**Pattern:** most OpenAI‑compatible providers accept:
+| Provider | Sign‑up | Free tier (at time of writing) | OpenAI‑compatible base URL | Key prefix |
+|----------|---------|--------------------------------|----------------------------|------------|
+| **NVIDIA NIM** ([build.nvidia.com](https://build.nvidia.com/)) | NVIDIA Developer (email) | **1,000** inference credits on signup (~40 RPM; up to 5,000 on request); [80+ model catalog](https://build.nvidia.com/models) (Llama, DeepSeek, Mixtral, Nemotron, Qwen, vision/biology/safety models) | `https://integrate.api.nvidia.com/v1` | `nvapi-` |
+| **OpenRouter** ([openrouter.ai](https://openrouter.ai)) | Email / GitHub | [`:free`‑suffixed models](https://openrouter.ai/collections/free-models) at no cost (~20 RPM / 200 RPD; higher RPD if account balance ≥ $10); commonly Llama, DeepSeek, Qwen, Gemma, Mistral families | `https://openrouter.ai/api/v1` | `sk-or-v1-` |
+| **Google AI Studio (Gemini)** | Google account | Free tier on Gemini 2.5 Flash etc. (~1,500 RPD reference); see [ai.google.dev](https://ai.google.dev) | OpenAI‑compat: `https://generativelanguage.googleapis.com/v1beta/openai/` | (none) |
+| **Groq** | Email | Speed‑first free tier (Llama / Mixtral / Qwen); see [console.groq.com](https://console.groq.com) | `https://api.groq.com/openai/v1` | `gsk_` |
+| **Cerebras** | Email | High‑TPS free tier on Llama 3.3 70B / 8B; see [cloud.cerebras.ai](https://cloud.cerebras.ai) | `https://api.cerebras.ai/v1` | `csk-` |
+| **SambaNova** | Email | Hundreds of TPS, free tier on Llama 3 family; see [cloud.sambanova.ai](https://cloud.sambanova.ai) | `https://api.sambanova.ai/v1` | (none) |
+| **Mistral La Plateforme** | Email + phone | Experimental/free tier covering all models incl. embeddings; see [console.mistral.ai](https://console.mistral.ai) | `https://api.mistral.ai/v1` | (none) |
+| **Together AI** | Email | Sign‑up credits + a set of **free** models; see [api.together.xyz](https://api.together.xyz) | `https://api.together.xyz/v1` | (none) |
+| **Cloudflare Workers AI** | Cloudflare account | Daily free **neuron** quota (small/medium models); see Cloudflare dashboard | `https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/v1` | (none) |
+| **GitHub Models** | GitHub account | Free **eval/experiment** quota (GPT‑4o, Llama, Phi, etc.); see [github.com/marketplace?type=models](https://github.com/marketplace?type=models) | `https://models.github.ai/inference` (old `models.inference.ai.azure.com` is deprecated) | GitHub PAT |
+| **AMD Developer Cloud** | Email / GitHub | **GPU hours** (~25 hrs base, +50 via programs; $100 GPU credits for new accounts). Not a hosted LLM API; you bring your own [vLLM](https://github.com/vllm-project/vllm)/[SGLang](https://github.com/sgl-project/sglang)/[llama.cpp](https://github.com/ggerganov/llama.cpp). See [AMD blog](https://www.amd.com/en/blogs/2025/enabling-the-future-of-ai-introducing-amd-rocm-7-and-the-amd-developer-cloud.html) | Self‑hosted: `http://YOUR_VM:8000/v1` | (none) |
+
+> ⚠ **AMD ≠ NVIDIA in shape.** NVIDIA gives you a **hosted, OpenAI‑compatible** inference API: grab a key and call it. AMD Developer Cloud gives you **MI300X GPU hours** that you turn into an OpenAI‑shaped endpoint by running vLLM, SGLang, or llama.cpp yourself. It’s for “I want to run open weights,” not “I want a managed inference key right now.”
+
+### One‑shot OpenAI‑compatible client
+
+Most providers above accept the standard `openai` SDK; just swap `base_url` and `api_key`:
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://YOUR_PROVIDER_OPENAI_COMPAT_ENDPOINT/v1",
-    api_key="YOUR_KEY",
+    base_url="https://integrate.api.nvidia.com/v1",  # NVIDIA NIM
+    api_key="nvapi-...",
 )
+
+resp = client.chat.completions.create(
+    model="meta/llama-3.3-70b-instruct",
+    messages=[{"role": "user", "content": "Hello"}],
+)
+print(resp.choices[0].message.content)
 ```
 
-Advanced routing: [**LiteLLM**](https://github.com/BerriAI/litellm) (single entrypoint to many backends).  
-**GitHub Copilot → OpenAI‑compatible local proxy** is described in community writeups (e.g. LiteLLM + Copilot); treat as **personal dev only**, subject to Copilot **rate limits** and policy.
+**Useful OpenRouter details:**
+
+1. **Routing vs explicit model.** Call `openrouter/auto` (smart pick), `openrouter/free` (random free model that supports your features), or a specific slug like `meta-llama/llama-3.3-70b-instruct:free`.
+2. **App‑attribution headers** (only needed to show up on [openrouter.ai/rankings](https://openrouter.ai/rankings); pure inference works without them):
+   ```python
+   client = OpenAI(
+       base_url="https://openrouter.ai/api/v1",
+       api_key="sk-or-v1-...",
+       default_headers={
+           "HTTP-Referer": "https://your-site.example",   # required to be ranked
+           "X-Title": "Your App Name",                     # legacy name, still works
+           # newer name: "X-OpenRouter-Title" (use either, not both)
+       },
+   )
+   resp = client.chat.completions.create(
+       model="deepseek/deepseek-r1:free",  # check current slugs on the site
+       messages=[{"role": "user", "content": "Explain attention in one paragraph."}],
+   )
+   ```
+3. **Rate limits.** Free models are typically **20 RPM / 200 RPD**; topping the account up to ≥ $10 raises the daily cap on free models (see official docs for current numbers).
+4. **CLI tools.** Point `OPENAI_BASE_URL` and `OPENAI_API_KEY` at OpenRouter and tools like [Aider](https://github.com/Aider-AI/aider), [Continue](https://github.com/continuedev/continue), and [LiteLLM](https://github.com/BerriAI/litellm) work out of the box.
+
+### Advanced routing
+
+[**LiteLLM**](https://github.com/BerriAI/litellm) is a single entry point to many backends with budgets, fallbacks, and routing:
+
+```yaml
+# litellm config snippet
+model_list:
+  - model_name: llama-fast
+    litellm_params:
+      model: openai/meta/llama-3.3-70b-instruct
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: os.environ/NVIDIA_API_KEY
+  - model_name: llama-fast
+    litellm_params:
+      model: openrouter/meta-llama/llama-3.3-70b-instruct:free
+      api_key: os.environ/OPENROUTER_API_KEY
+router_settings:
+  routing_strategy: simple-shuffle  # or latency-based / usage-based-routing
+```
+
+The **GitHub Copilot → OpenAI‑compatible local proxy** pattern (e.g. LiteLLM + Copilot) is documented in community writeups; treat as **personal dev only**, subject to Copilot **rate limits** and policy.
 
 ---
 

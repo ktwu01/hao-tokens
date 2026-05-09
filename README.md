@@ -6,7 +6,7 @@
 ![Last Verified](https://img.shields.io/badge/last%20verified-April%202026-brightgreen)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](CONTRIBUTING.md)
 ![License: CC0](https://img.shields.io/badge/license-CC0-lightgrey)
-![Providers](https://img.shields.io/badge/providers-12-orange)
+![Providers](https://img.shields.io/badge/providers-18-orange)
 
 ---
 
@@ -138,28 +138,88 @@
 
 ## 免费 / 按额度的 LLM **API**（合规厂商层）
 
-这些**不是**「仅学生」，但与教育场景的聊天权益叠加后，是**零成本开发**的主力：
+这些**不是**「仅学生」，但与教育场景的聊天权益叠加后，是**零成本开发**的主力。所有**额度、限流、模型清单**会随厂商策略变动，**以官方页面为准**。
 
-- **Google AI Studio（Gemini API）** — [`ai.google.dev`](https://ai.google.dev)
-- **Groq** — [`console.groq.com`](https://console.groq.com)
-- **OpenRouter（含免费模型路由）** — [`openrouter.ai`](https://openrouter.ai)
-- **Cloudflare Workers AI** — 见 Cloudflare 控制台文档
-- **GitHub Models** — 与 GitHub 账号/Copilot 等绑定；见 GitHub 文档
-- **Mistral / Cohere / NVIDIA NIM / Together 等** — 常有**小额长期免费层**或**试用金**；注意脚注（手机号验证、是否参与训练等）
+### 厂商速查表
 
-**惯用法：**多数 OpenAI 兼容厂商可用：
+| 厂商 | 注册门槛 | 免费层（写本文时） | OpenAI 兼容端点 | Key 前缀 |
+|------|----------|--------------------|------------------|----------|
+| **NVIDIA NIM**（[build.nvidia.com](https://build.nvidia.com/)） | 邮箱注册 NVIDIA Developer | 注册即送 **1,000** 推理 credits（约 40 RPM；可申请扩到 5,000）；[80+ 模型目录](https://build.nvidia.com/models)（Llama、DeepSeek、Mixtral、Nemotron、Qwen、视觉/生物/安全模型等） | `https://integrate.api.nvidia.com/v1` | `nvapi-` |
+| **OpenRouter**（[openrouter.ai](https://openrouter.ai)） | 邮箱/GitHub | [`:free` 后缀模型](https://openrouter.ai/collections/free-models)免费（约 20 RPM / 200 RPD；账户余额 ≥ $10 可放宽）；常见 Llama、DeepSeek、Qwen、Gemma、Mistral 等开源系列 | `https://openrouter.ai/api/v1` | `sk-or-v1-` |
+| **Google AI Studio（Gemini）** | Google 账号 | Gemini 2.5 Flash 等**免费层**（参考 1,500 RPD）；见 [ai.google.dev](https://ai.google.dev) | OpenAI 兼容入口：`https://generativelanguage.googleapis.com/v1beta/openai/` | （无固定前缀） |
+| **Groq** | 邮箱 | Llama / Mixtral 等**速度优先**层；见 [console.groq.com](https://console.groq.com) | `https://api.groq.com/openai/v1` | `gsk_` |
+| **Cerebras** | 邮箱 | Llama 3.3 70B / 8B 高速免费层；见 [cloud.cerebras.ai](https://cloud.cerebras.ai) | `https://api.cerebras.ai/v1` | `csk-` |
+| **SambaNova** | 邮箱 | 数百 TPS 的免费层（Llama 3 系列）；见 [cloud.sambanova.ai](https://cloud.sambanova.ai) | `https://api.sambanova.ai/v1` | （无固定前缀） |
+| **Mistral La Plateforme** | 邮箱 + 手机号 | 全模型（含 embed）的**实验/免费**层；见 [console.mistral.ai](https://console.mistral.ai) | `https://api.mistral.ai/v1` | （无固定前缀） |
+| **Together AI** | 邮箱 | 注册赠金 + 部分**免费**模型；见 [api.together.xyz](https://api.together.xyz) | `https://api.together.xyz/v1` | （无固定前缀） |
+| **Cloudflare Workers AI** | Cloudflare 账号 | 每日免费**神经元额度**（路由小模型）；见 Cloudflare 控制台 | `https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/v1` | （无固定前缀） |
+| **GitHub Models** | GitHub 账号 | 免费**实验/评估**额度（GPT-4o、Llama、Phi 等）；见 [github.com/marketplace?type=models](https://github.com/marketplace?type=models) | `https://models.github.ai/inference`（旧 `models.inference.ai.azure.com` 已弃用） | GitHub PAT |
+| **AMD Developer Cloud** | 邮箱/GitHub | **GPU 时长**（约 25 小时起，部分计划再 +50；新账户 $100 GPU credits）；不是托管 LLM API，需自跑 vLLM/SGLang 等；见 [amd.com（介绍）](https://www.amd.com/en/blogs/2025/enabling-the-future-of-ai-introducing-amd-rocm-7-and-the-amd-developer-cloud.html) | 自建：`http://YOUR_VM:8000/v1` | （无固定前缀） |
+
+> ⚠ **AMD 与 NVIDIA 的形态不同**：NVIDIA 给你**托管的、OpenAI 兼容**的推理 API（直接拿 Key 调用）。AMD Developer Cloud 给你**MI300X GPU 时长**，需要自己拉起 [vLLM](https://github.com/vllm-project/vllm)/[SGLang](https://github.com/sgl-project/sglang)/[llama.cpp](https://github.com/ggerganov/llama.cpp) 暴露 OpenAI 形态端点。它适合「想跑大模型权重」而非「立刻拿 Key 调推理」的场景。
+
+### 通用调用样板（OpenAI 兼容）
+
+绝大多数厂商都能直接用 `openai` SDK，只换 `base_url` 与 `api_key`：
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://YOUR_PROVIDER_OPENAI_COMPAT_ENDPOINT/v1",
-    api_key="YOUR_KEY",
+    base_url="https://integrate.api.nvidia.com/v1",  # NVIDIA NIM
+    api_key="nvapi-...",
 )
+
+resp = client.chat.completions.create(
+    model="meta/llama-3.3-70b-instruct",
+    messages=[{"role": "user", "content": "Hello"}],
+)
+print(resp.choices[0].message.content)
 ```
 
-进阶路由：[**LiteLLM**](https://github.com/BerriAI/litellm)（单入口对接多后端）。  
-社区有 **GitHub Copilot → OpenAI 兼容本地代理**（如 LiteLLM + Copilot）等写法；请视为**个人开发**，并遵守 Copilot **限流**与政策。
+**OpenRouter 的几个细节：**
+
+1. **路由 vs 指定模型**。可调用 `openrouter/auto`（自动选）、`openrouter/free`（免费池随机路由）、或精确模型名如 `meta-llama/llama-3.3-70b-instruct:free`。
+2. **应用归因请求头**（写到 [openrouter.ai/rankings](https://openrouter.ai/rankings) 才需要；纯调用可忽略）：
+   ```python
+   client = OpenAI(
+       base_url="https://openrouter.ai/api/v1",
+       api_key="sk-or-v1-...",
+       default_headers={
+           "HTTP-Referer": "https://your-site.example",   # 必需才进入排行榜
+           "X-Title": "Your App Name",                     # 旧名仍兼容
+           # 新名："X-OpenRouter-Title"（择一即可）
+       },
+   )
+   resp = client.chat.completions.create(
+       model="deepseek/deepseek-r1:free",  # 模型 slug 见官网；版本会变
+       messages=[{"role": "user", "content": "解释一下注意力机制"}],
+   )
+   ```
+3. **限流口径**：免费模型典型为 **20 RPM / 200 RPD**；账户余额加到 ≥ $10 后免费 RPD 上限放宽（以官方文档为准）。
+4. **CLI 也能用**：把 `OPENAI_BASE_URL`、`OPENAI_API_KEY` 指到 OpenRouter，[Aider](https://github.com/Aider-AI/aider)、[Continue](https://github.com/continuedev/continue)、[litellm](https://github.com/BerriAI/litellm) 等都开箱即用。
+
+### 进阶路由
+
+[**LiteLLM**](https://github.com/BerriAI/litellm) 单入口对接多后端，可设预算、回退与路由：
+
+```yaml
+# litellm config 片段
+model_list:
+  - model_name: llama-fast
+    litellm_params:
+      model: openai/meta/llama-3.3-70b-instruct
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: os.environ/NVIDIA_API_KEY
+  - model_name: llama-fast
+    litellm_params:
+      model: openrouter/meta-llama/llama-3.3-70b-instruct:free
+      api_key: os.environ/OPENROUTER_API_KEY
+router_settings:
+  routing_strategy: simple-shuffle  # 也可 latency-based / usage-based-routing
+```
+
+社区还有 **GitHub Copilot → OpenAI 兼容本地代理**（如 LiteLLM + Copilot）写法；请视为**个人开发**，并遵守 Copilot **限流**与政策。
 
 ---
 
