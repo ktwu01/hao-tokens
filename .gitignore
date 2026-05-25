@@ -11,6 +11,10 @@
 .vscode/*
 !.vscode/extensions.json
 
+# Python
+__pycache__/
+*.py[cod]
+
 # Optional local notes
 .env
 .env.*
