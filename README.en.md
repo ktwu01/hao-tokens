@@ -219,6 +219,27 @@ router_settings:
   routing_strategy: simple-shuffle  # or latency-based / usage-based-routing
 ```
 
+### About `.env.example`
+
+`.env.example` is a sample settings file. It shows the names of the private keys and service URLs this project may use, but the values are fake placeholders.
+
+When you want to run a tool locally, make your own `.env` file and fill in only the services you actually use:
+
+```bash
+cp .env.example .env
+```
+
+Keep `.env` private. It is like a key ring: if it contains a real API key, do not publish it, paste it into issues, or commit it to git.
+
+Many AI services use the same two basic settings: one value for the secret key, and one value for the API address. For example:
+
+```bash
+SOME_SERVICE_API_KEY=...
+SOME_SERVICE_API_BASE=https://example.com/v1
+```
+
+You only need to fill in the providers you plan to use. Leave the rest alone.
+
 The **GitHub Copilot → OpenAI‑compatible local proxy** pattern (e.g. LiteLLM + Copilot) is documented in community writeups; treat as **personal dev only**, subject to Copilot **rate limits** and policy.
 
 ---
