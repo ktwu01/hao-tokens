@@ -140,6 +140,26 @@
 
 这些**不是**「仅学生」，但与教育场景的聊天权益叠加后，是**零成本开发**的主力。所有**额度、限流、模型清单**会随厂商策略变动，**以官方页面为准**。
 
+### 多厂商免费额度速查（截图整理）
+
+> 下表根据用户提供的截图转录，属于时间点快照；模型、额度、限流和绑卡要求会变化。使用前请打开厂商官方页面核对。表中 “RPM” 表示每分钟请求数，“TPM” 表示每分钟 token 数。
+
+| 提供商 | 模型 | 免费额度 | 是否需要银行卡 | 适合场景 |
+|---|---|---|---|---|
+| Google Gemini API | Gemini 2.5 Flash（免费层于 2025 年缩减） | 1,500 次请求/天；Flash 10 RPM | 否 | 最容易使用的免费基线 |
+| Groq | Llama 3.1、Mixtral、Gemma 2 | 30 RPM、6K TPM、1,000 次请求/天 | 否 | 对速度敏感的应用（315 TPS） |
+| Cerebras | gpt-oss-120b、zai-glm-4.7 | 5 RPM、30K TPM、每天 1M tokens | 否 | 超长提示词 |
+| NVIDIA NIM | 多种开源与专有模型 | 免费原型层 | 是（需要账户） | 尝试新模型 |
+| OpenRouter | 聚合 50+ 个模型 | 多个免费层模型 | 否 | 一把 Key 调用多个模型 |
+| OpenAI | GPT-5 系列 | 数据共享换取 tokens；约 5 美元试用额度（不稳定） | 是 | 评测 / 一次性测试 |
+| Anthropic Claude | Opus 4.8、Sonnet 4.6、Haiku 4.5、Fable 5 | 约 5 美元试用额度；OSS 6mo Max | 是 | 推理能力 |
+| Mistral La Plateforme | Mistral Small / Large | 免费试用额度 | 是 | 欧盟合规 |
+| Cohere | Command R / R+ | 免费试用额度 | 是 | RAG 优先的技术栈 |
+| DeepSeek | DeepSeek V4-Flash / V4-Pro | 低价按量付费 | 是 | 低成本推理 |
+| xAI Grok | Grok（最新一代） | 有限免费额度 | 是 | X 集成 |
+| Hugging Face | 开源模型 | 受限速率的免费层 | 否 | 开放权重推理 |
+| Together AI | 100+ 个开源模型 | 少量免费额度 | 是 | 开源模型微调 |
+
 ### 厂商速查表
 
 | 厂商 | 注册门槛 | 免费层（写本文时） | OpenAI 兼容端点 | Key 前缀 |
