@@ -140,6 +140,26 @@ Older: [BerriAI/liteLLM-proxy](https://github.com/BerriAI/liteLLM-proxy) is **de
 
 These are **not** “student only,” but together with education chat perks they form the backbone of **zero‑cost dev**. **Quotas, rate limits, and model lists drift**, so always re‑confirm on the provider page.
 
+### Multi-provider free-quota snapshot (transcribed from an image)
+
+> The table below is transcribed from a user-provided image and is a point-in-time snapshot. Models, quotas, rate limits, and card requirements can change. Verify each item on the provider's official site before use. “RPM” means requests per minute; “TPM” means tokens per minute.
+
+| Provider | Models | Free quota | Card required | Best for |
+|---|---|---|---|---|
+| Google Gemini API | Gemini 2.5 Flash (free tier reduced 2025) | 1,500 req/day; Flash, 10 RPM | No | Most accessible free baseline |
+| Groq | Llama 3.1, Mixtral, Gemma 2 | 30 RPM, 6K TPM, 1,000 req/day | No | Speed-critical apps (315 TPS) |
+| Cerebras | gpt-oss-120b, zai-glm-4.7 | 5 RPM, 30K TPM, 1M tokens/day | No | Very large prompts |
+| NVIDIA NIM | Many open + proprietary | Free prototyping tier | Account required | Trying new models |
+| OpenRouter | Aggregated (50+ models) | Several free-tier models | No | One key, many models |
+| OpenAI | GPT-5 family | Data-sharing tokens; ~$5 trial inconsistent | Yes | Eval / one-off tests |
+| Anthropic Claude | Opus 4.8, Sonnet 4.6, Haiku 4.5, Fable 5 | ~$5 trial; OSS 6mo Max | Yes | Best-in-class reasoning |
+| Mistral La Plateforme | Mistral Small / Large | Free trial credits | Yes | EU compliance |
+| Cohere | Command R / R+ | Free trial credits | Yes | RAG-first stacks |
+| DeepSeek | DeepSeek V4-Flash / V4-Pro | Cheap pay-as-you-go | Yes | Cheap reasoning |
+| xAI Grok | Grok (latest generation) | Limited free credits | Yes | X integration |
+| Hugging Face | Open source models | Rate-limited free tier | No | Open-weights inference |
+| Together AI | 100+ open models | Small free credits | Yes | Open model fine-tuning |
+
 ### Provider cheat sheet
 
 | Provider | Sign‑up | Free tier (at time of writing) | OpenAI‑compatible base URL | Key prefix |
